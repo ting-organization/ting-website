@@ -132,7 +132,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 /* ---- Home: hero --------------------------------------------------------------- */
 
 .hero-sec { padding: 72px 0 0; }
-.home h1 { max-width: 11em; margin-top: 22px; font: 400 clamp(52px, 8.6vw, 118px)/.95 var(--serif); letter-spacing: -.03em; }
+/* One line where it fits; otherwise the emphasis keeps together on its own line. */
+.home h1 { margin-top: 22px; font: 400 clamp(52px, 6.5vw, 88px)/.95 var(--serif); letter-spacing: -.03em; text-wrap: balance; }
+.home h1 em { white-space: nowrap; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 72px; align-items: end; margin-top: 52px; }
 .lead { max-width: 54ch; color: var(--text-2); font-size: 20px; line-height: 1.55; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
@@ -154,11 +156,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .strata .s1 span { color: color-mix(in srgb, var(--bg) 68%, var(--text)); }
 .strata figcaption { margin-top: 14px; color: var(--muted); font-size: 13.5px; text-align: center; }
 
-.ledger { display: flex; align-items: center; gap: 14px 44px; flex-wrap: wrap; margin-top: 84px; padding: 16px 0 17px; border-top: 1px solid var(--text); font-family: var(--mono); }
+.ledger { display: flex; align-items: baseline; gap: 14px 40px; flex-wrap: wrap; margin-top: 84px; padding: 16px 0 17px; border-top: 1px solid var(--text); font-family: var(--mono); }
 .ledger-state { display: inline-flex; align-items: center; gap: 9px; color: var(--muted); font-size: 11.5px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; }
+/* The margin keeps the online ring inside the rule's left edge. */
+.ledger-state .dot { margin-left: 3px; }
 .ledger[data-state=online] .dot { background: var(--dot-good); box-shadow: 0 0 0 3px color-mix(in srgb, var(--dot-good) 22%, transparent); }
 .ledger[data-state=offline] .dot { background: var(--danger); }
-.ledger dl { display: flex; gap: 14px 44px; flex-wrap: wrap; margin: 0; }
+.ledger dl { display: flex; gap: 14px 36px; flex-wrap: wrap; margin: 0; }
 .ledger dl div { display: flex; align-items: baseline; gap: 10px; }
 .ledger dt { color: var(--faint); font-size: 11.5px; letter-spacing: .09em; text-transform: uppercase; }
 .ledger dd { margin: 0; font-size: 14px; font-weight: 550; font-variant-numeric: tabular-nums; }
@@ -396,6 +400,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 
 /* ---- Smaller screens ---------------------------------------------------------- */
 
+/* Below the width that holds the figures on one row, the state and the node share
+   the first row and the figures, each label over its value, the second. */
+@media (max-width: 1300px) {
+  .ledger-link { order: 1; }
+  .ledger dl { order: 2; display: grid; grid-template-columns: repeat(5, auto); justify-content: space-between; width: 100%; gap: 12px 24px; }
+  .ledger dl div { flex-direction: column; gap: 2px; }
+}
 @media (max-width: 1180px) {
   .wiki-page.has-toc { grid-template-columns: minmax(0, 760px); }
   .toc { display: none; }
@@ -430,9 +441,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
   .hero-grid { margin-top: 32px; }
   .lead, .sec-lead, .aside-text { font-size: 18px; }
   .ledger { margin-top: 56px; }
-  .ledger dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: 12px 24px; }
-  .ledger dl div { flex-direction: column; gap: 0; }
-  .ledger-link { margin-left: 0; }
+  .ledger dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .terminals { grid-template-columns: minmax(0, 1fr); gap: 56px; }
   .proofs, .cautions, .standards { grid-template-columns: minmax(0, 1fr); }
   .places { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -457,6 +466,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
   .pager .next { grid-column: auto; }
 }
 @media (max-width: 600px) {
+  /* Small enough for "that doesn't move" (6.7em) to fit one line between the gutters. */
+  .home h1 { font-size: min(52px, calc((100vw - 40px) / 6.8)); }
   .sec { padding: 64px 0; }
   .four, .gains, .places { grid-template-columns: minmax(0, 1fr); }
   .four { gap: 32px; }
