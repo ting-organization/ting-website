@@ -9,10 +9,10 @@
           <p class="lead">Ting is a general-purpose proof-of-work blockchain built as a permanent foundation. Its consensus is a small set of rules, written once and fixed for good: no developer, miner or foundation can change them. Coins, accounts, identities and fees are programs that anyone can deploy on top.</p>
           <div class="cta">
             <a class="button" href="{{root}}wiki/tour/">Take the tour</a>
+            <a class="btn" href="#ting-id">Get Ting ID</a>
             <a class="btn" href="#mine">Start mining</a>
-            <a class="btn" href="https://node1.ting-node.com/">Open the explorer</a>
           </div>
-          <p class="cta-more"><a href="https://www.youtube.com/watch?v=rPae96sb1RI">Watch the introduction</a> (3½ minutes) or <a href="{{root}}wiki/reference/rules/">read the protocol rules</a>.</p>
+          <p class="cta-more"><a href="https://www.youtube.com/watch?v=rPae96sb1RI">Watch the introduction</a> (3½ minutes), <a href="{{root}}wiki/reference/rules/">read the protocol rules</a> or <a href="https://node1.ting-node.com/">open the explorer</a>.</p>
         </div>
         <figure class="strata">
           <ol aria-label="The four layers of Ting, from the applications down to the consensus, and who can change each">
@@ -39,9 +39,37 @@
     </div>
   </section>
 
+  <section class="sec" id="ting-id" aria-labelledby="ting-id-title">
+    <div class="wrap sec-grid">
+      <p class="sec-rail label"><span class="sec-no">01</span><span>Use it today</span></p>
+      <div class="sec-body">
+        <h2 id="ting-id-title">Hold, pay and sign in with <em>Ting ID</em></h2>
+        <p class="sec-lead">The wallet and identity app for Ting, on Android. Accounts, recovery and sign-in are not features of the chain: they are programs deployed on it, and Ting ID is one app that uses them.</p>
+        <article class="feature">
+          <div class="feature-copy">
+            <div class="item-id"><img class="app-icon" src="{{root}}assets/ting-id.svg" width="52" height="52" alt=""><div><h3 class="feature-name">Ting ID</h3><p class="label">A wallet and identity app · Android</p></div></div>
+            <ul>
+              <li><strong>An identity, not only a key.</strong> A Spending account for everyday payments, and a Savings account whose payments wait seven days and can be cancelled meanwhile.</li>
+              <li><strong>Recovery that survives a lost phone.</strong> A twelve-word phrase, and guardians who can restore access or replace a phrase someone else got hold of.</li>
+              <li><strong>Any coin of the standard coin program.</strong> Send, schedule and cancel payments, by QR code or link, with fees set from what recent transactions paid.</li>
+              <li><strong>One signature for sites and programs.</strong> Sign in without a password, and approve an action in a program in the program’s own words. The page holds no key.</li>
+              <li><strong>It checks what it is told.</strong> Every record is checked against the block it comes from, and with two or more nodes each checks the others.</li>
+            </ul>
+            <p class="feature-links"><a class="button" href="https://github.com/ting-organization/ting-id#download">Download for Android</a><a href="https://github.com/ting-organization/ting-id">Source</a><a href="{{root}}wiki/programs/identity/">The identity registry</a></p>
+            <p class="fine">Ting ID is new software and still changing: keep in it only what you can afford to lose. It is one wallet built on the reference programs, not part of the protocol, and the miner has a wallet of its own, so mining needs no phone. The pictures are of a development chain with test identities.</p>
+          </div>
+          <div class="feature-shots">
+            <img src="{{root}}assets/ting-id-wallet.png" width="564" height="1224" alt="Ting ID’s wallet: a Daler total, the Spending and Savings accounts, and recent activity">
+            <img src="{{root}}assets/ting-id-review.png" width="564" height="1224" alt="Ting ID reviewing a payment before it is sent, the receiving account shown in full">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="sec" id="protocol" aria-labelledby="protocol-title">
     <div class="wrap sec-grid">
-      <p class="sec-rail label"><span class="sec-no">01</span><span>The protocol</span></p>
+      <p class="sec-rail label"><span class="sec-no">02</span><span>The protocol</span></p>
       <div class="sec-body">
         <h2 id="protocol-title">Consensus does four things, and <em>nothing else</em></h2>
         <p class="sec-lead">On most programmable chains, a new signature scheme, opcode, fee rule or token standard is a protocol upgrade: every node changes together, and each change can alter what existing applications do or what they cost. Ting keeps its consensus small enough to state exactly, and then leaves it alone.</p>
@@ -66,7 +94,7 @@
 
   <section class="sec" id="why" aria-labelledby="why-title">
     <div class="wrap sec-grid">
-      <p class="sec-rail label"><span class="sec-no">02</span><span>What it gives you</span></p>
+      <p class="sec-rail label"><span class="sec-no">03</span><span>What it gives you</span></p>
       <div class="sec-body">
         <h2 id="why-title">Rules that applications can depend on</h2>
         <div class="gains">
@@ -84,7 +112,7 @@
 
   <section class="sec inverse" id="check" aria-labelledby="check-title">
     <div class="wrap sec-grid">
-      <p class="sec-rail label"><span class="sec-no">03</span><span>Agreement you can check</span></p>
+      <p class="sec-rail label"><span class="sec-no">04</span><span>Agreement you can check</span></p>
       <div class="sec-body">
         <h2 id="check-title">Nothing here asks to be taken <em>on trust</em></h2>
         <p class="sec-lead">Freezing the rules only helps if independent implementations agree on every byte and every counter. Ting is built so that agreement can be checked, not assumed.</p>
@@ -116,13 +144,13 @@
 
   <section class="sec" id="start" aria-labelledby="start-title">
     <div class="wrap sec-grid">
-      <p class="sec-rail label"><span class="sec-no">04</span><span>Get started</span></p>
+      <p class="sec-rail label"><span class="sec-no">05</span><span>Get started</span></p>
       <div class="sec-body">
         <h2 id="start-title">Choose your path</h2>
         <div class="paths">
+          <a class="path" href="#ting-id"><strong>Hold and pay</strong><span>Ting ID is a wallet and identity app for Android: spending and savings accounts, payments by QR code, recovery through guardians.</span><span class="arrow">Get Ting ID</span></a>
           <a class="path" href="{{root}}wiki/tour/"><strong>Understand it</strong><span>A short tour that follows one transaction from its bytes to a block every node agrees on, then the common questions and the glossary.</span><span class="arrow">Take the tour</span></a>
           <a class="path" href="#mine"><strong>Mine</strong><span>The miner is a full node with a wallet built in. It searches on the CPU, the GPUs or both, and claims each block’s reward.</span><span class="arrow">Start mining</span></a>
-          <a class="path" href="#ting-id"><strong>Hold and pay</strong><span>Ting ID is a wallet and identity app for Android: spending and savings accounts, payments by QR code, recovery through guardians.</span><span class="arrow">Get Ting ID</span></a>
           <a class="path" href="{{root}}wiki/start/node/"><strong>Run a node</strong><span>Validate the chain yourself and serve its explorer and REST API, on the production network or on a development chain of your own.</span><span class="arrow">Start a node</span></a>
           <a class="path" href="{{root}}wiki/applications/"><strong>Build on it</strong><span>What programs can do, how to write one the network accepts, and the reference programs for coins, identities and signatures.</span><span class="arrow">What applications build</span></a>
           <a class="path" href="{{root}}wiki/reference/rules/"><strong>Implement it</strong><span>The protocol rules in one document, and the seed and vectors that check an implementation byte for byte.</span><span class="arrow">Read the rules</span></a>
@@ -162,10 +190,17 @@
 
   <section class="sec" id="apps" aria-labelledby="apps-title">
     <div class="wrap sec-grid">
-      <p class="sec-rail label"><span class="sec-no">05</span><span>Software</span></p>
+      <p class="sec-rail label"><span class="sec-no">06</span><span>Software</span></p>
       <div class="sec-body">
         <h2 id="apps-title">Everything that runs on Ting today</h2>
         <p class="sec-lead">All of it is open source, under the MIT and Apache 2.0 licences. None of it is part of the protocol: any of it can be replaced by something better without asking anyone.</p>
+
+        <h3 class="catalog-head label">Wallet and identity</h3>
+        <article class="item">
+          <div class="item-id"><img class="app-icon" src="{{root}}assets/ting-id.svg" width="42" height="42" alt=""><div><h4>Ting ID</h4><p class="label">Wallet and identity · Android</p></div></div>
+          <p class="item-desc">Spending and Savings accounts, recovery through guardians, payments by QR code or link, and sign-in without a password, for any coin of the standard coin program.</p>
+          <p class="item-links"><a href="https://github.com/ting-organization/ting-id#download">Download for Android</a><a href="https://github.com/ting-organization/ting-id">Source</a><a href="#ting-id">What it does</a></p>
+        </article>
 
         <h3 class="catalog-head label">Nodes and mining</h3>
         <article class="item">
@@ -182,26 +217,6 @@
           <div class="item-id"><span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/><path d="M9.5 3v3.5M14.5 3v3.5M9.5 17.5V21M14.5 17.5V21M3 9.5h3.5M3 14.5h3.5M17.5 9.5H21M17.5 14.5H21"/></svg></span><div><h4>Ting miner</h4><p class="label">Mining node · CPU and GPU</p></div></div>
           <p class="item-desc">The Ting node with a mining policy for pay and a wallet for the rewards. It benchmarks the machine and mines with the fastest search it has.</p>
           <p class="item-links"><a href="https://github.com/ting-organization/ting-miner/releases">Download</a><a href="https://github.com/ting-organization/ting-miner">Source</a></p>
-        </article>
-
-        <h3 class="catalog-head label" id="ting-id">Wallet and identity</h3>
-        <article class="feature">
-          <div class="feature-copy">
-            <div class="item-id"><img class="app-icon" src="{{root}}assets/ting-id.svg" width="52" height="52" alt=""><div><h4>Ting ID</h4><p class="label">A wallet and identity app · Android</p></div></div>
-            <ul>
-              <li><strong>An identity, not only a key.</strong> A Spending account for everyday payments, and a Savings account whose payments wait seven days and can be cancelled meanwhile.</li>
-              <li><strong>Recovery that survives a lost phone.</strong> A twelve-word phrase, and guardians who can restore access or replace a phrase someone else got hold of.</li>
-              <li><strong>Any coin of the standard coin program.</strong> Send, schedule and cancel payments, by QR code or link, with fees set from what recent transactions paid.</li>
-              <li><strong>One signature for sites and programs.</strong> Sign in without a password, and approve an action in a program in the program’s own words. The page holds no key.</li>
-              <li><strong>It checks what it is told.</strong> Every record is checked against the block it comes from, and with two or more nodes each checks the others.</li>
-            </ul>
-            <p class="feature-links"><a class="button" href="https://github.com/ting-organization/ting-id#download">Download for Android</a><a href="https://github.com/ting-organization/ting-id">Source</a><a href="{{root}}wiki/programs/identity/">The identity registry</a></p>
-            <p class="fine">Ting ID is new software and still changing: keep in it only what you can afford to lose. It is one wallet built on the reference programs, not part of the protocol, and the miner has a wallet of its own, so mining needs no phone. The pictures are of a development chain with test identities.</p>
-          </div>
-          <div class="feature-shots">
-            <img src="{{root}}assets/ting-id-wallet.png" width="564" height="1224" loading="lazy" alt="Ting ID’s wallet: a Daler total, the Spending and Savings accounts, and recent activity">
-            <img src="{{root}}assets/ting-id-review.png" width="564" height="1224" loading="lazy" alt="Ting ID reviewing a payment before it is sent, the receiving account shown in full">
-          </div>
         </article>
 
         <h3 class="catalog-head label">Applications on the chain</h3>
@@ -244,7 +259,7 @@
 
   <section class="sec" id="daler" aria-labelledby="daler-title">
     <div class="wrap sec-grid">
-      <p class="sec-rail label"><span class="sec-no">06</span><span>The first coin</span></p>
+      <p class="sec-rail label"><span class="sec-no">07</span><span>The first coin</span></p>
       <div class="sec-body">
         <h2 id="daler-title">Daler, the first coin on Ting</h2>
         <div class="two-col">
@@ -278,7 +293,7 @@
 
   <section class="sec" id="status" aria-labelledby="status-title">
     <div class="wrap sec-grid">
-      <p class="sec-rail label"><span class="sec-no">07</span><span>Where it stands</span></p>
+      <p class="sec-rail label"><span class="sec-no">08</span><span>Where it stands</span></p>
       <div class="sec-body">
         <h2 id="status-title">What to know before you rely on it</h2>
         <p class="sec-lead">Ting is a young network and a small project. These are its weak points, stated plainly.</p>
@@ -296,7 +311,7 @@
 
   <section class="sec" id="details" aria-labelledby="details-title">
     <div class="wrap sec-grid">
-      <p class="sec-rail label"><span class="sec-no">08</span><span>At a glance</span></p>
+      <p class="sec-rail label"><span class="sec-no">09</span><span>At a glance</span></p>
       <div class="sec-body">
         <h2 id="details-title">Technical details</h2>
         <dl class="spec wide">
@@ -319,7 +334,7 @@
 
   <section class="sec" id="community" aria-labelledby="community-title">
     <div class="wrap sec-grid">
-      <p class="sec-rail label"><span class="sec-no">09</span><span>Community</span></p>
+      <p class="sec-rail label"><span class="sec-no">10</span><span>Community</span></p>
       <div class="sec-body">
         <h2 id="community-title">Ask, review, take part</h2>
         <div class="places">

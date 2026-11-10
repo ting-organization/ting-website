@@ -9,9 +9,10 @@ hosted anywhere that serves files, GitHub Pages included.
 
 ## What is in it
 
-- **The home page** (`src/home.html`): what Ting is and why, how its consensus can
-  be checked, where to start as a reader, miner, user or builder, the software that
-  runs on it, Daler, the project's weak points stated plainly, and where to ask.
+- **The home page** (`src/home.html`): what Ting is, then Ting ID, the wallet and
+  identity app to use it with, then why Ting is built as it is, how its consensus
+  can be checked, where to start as a reader, miner, user or builder, the software
+  that runs on it, Daler, the project's weak points stated plainly, and where to ask.
   The line of figures under its opening, and Daler's issuance, are read in the
   visitor's browser from a public node's REST API (`node1.ting-node.com`, then
   `node2`); without an answer the page reads the same and links to the explorer.
