@@ -1,0 +1,70 @@
+# Builds the site and, once GitHub Pages is turned on for this repository
+# (Settings → Pages → Source: GitHub Actions), publishes it. Until then the
+# build still runs, so a change that breaks the site or a link is caught.
+#
+# The wiki's content is read from the ting repository when the site is built,
+# so the site is built again every night to follow it.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      pages: ${{ steps.pages.outputs.enabled }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: See whether Pages is turned on, and at which address
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .html_url 2>/dev/null); then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            echo "url=$url" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "Pages is not turned on for this repository: the site is built and checked, not published." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      # TING_REF is a repository variable for building the wiki from a branch
+      # or tag of the ting repository other than master.
+      - name: Build the site
+        env:
+          SITE_URL: ${{ steps.pages.outputs.url }}
+          TING_REF: ${{ vars.TING_REF }}
+        run: npm run build
+      - if: steps.pages.outputs.enabled == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.pages == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

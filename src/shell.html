@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ting">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  {{meta}}
+  <link rel="icon" href="{{root}}assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="{{root}}assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{root}}assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{root}}assets/site.css?v={{v}}">
+  <script>try { const theme = localStorage.getItem('ting-theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch {}</script>
+</head>
+<body class="page-{{section}}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{{root}}" aria-label="Ting home"><img src="{{root}}assets/logo.svg" alt="" width="28" height="28"><span>Ting</span></a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="{{root}}#start">Get started</a>
+        <a {{wiki_active}} href="{{root}}wiki/">Wiki</a>
+        <a href="{{root}}#apps">Software</a>
+        <a class="external" href="https://node1.ting-node.com/">Explorer</a>
+        <a class="external" href="https://github.com/ting-organization">GitHub</a>
+      </nav>
+      <a class="live" id="live" href="https://node1.ting-node.com/" data-state="connecting" title="The production network's height, read from a public node" hidden><span class="live-dot" aria-hidden="true"></span><span id="live-text"></span></a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch between light and dark">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3m0 15v3M1.5 12h3m15 0h3M4.6 4.6l2.1 2.1m10.6 10.6 2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+      </button>
+    </div>
+  </header>
+  {{body}}
+  <script src="{{root}}assets/site.js?v={{v}}" defer></script>
+</body>
+</html>

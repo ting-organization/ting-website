@@ -1,0 +1,383 @@
+<main id="main" class="home">
+
+  <section class="hero-sec" aria-labelledby="hero-title">
+    <div class="wrap">
+      <p class="label">Proof of work · Programmable · Frozen since 21 October 2026</p>
+      <h1 id="hero-title">A foundation that <em>doesn’t move</em></h1>
+      <div class="hero-grid">
+        <div>
+          <p class="lead">Ting is a general-purpose proof-of-work blockchain built as a permanent foundation. Its consensus is a small set of rules, written once and fixed for good: no developer, miner or foundation can change them. Coins, accounts, identities and fees are programs that anyone can deploy on top.</p>
+          <div class="cta">
+            <a class="button" href="{{root}}wiki/tour/">Take the tour</a>
+            <a class="btn" href="#mine">Start mining</a>
+            <a class="btn" href="https://node1.ting-node.com/">Open the explorer</a>
+          </div>
+          <p class="cta-more"><a href="https://www.youtube.com/watch?v=rPae96sb1RI">Watch the introduction</a> (3½ minutes) or <a href="{{root}}wiki/reference/rules/">read the protocol rules</a>.</p>
+        </div>
+        <figure class="strata">
+          <ol aria-label="The four layers of Ting, from the applications down to the consensus, and who can change each">
+            <li class="s4"><strong>Applications</strong><span>Anyone, by deploying programs</span></li>
+            <li class="s3"><strong>Node software</strong><span>Any implementer, at any time</span></li>
+            <li class="s2"><strong>Capacity</strong><span>Miners, by work-weighted vote</span></li>
+            <li class="s1"><strong>Consensus</strong><span>Nobody. Frozen at launch.</span></li>
+          </ol>
+          <figcaption>Four layers, four speeds of change: who can change each one.</figcaption>
+        </figure>
+      </div>
+
+      <div class="ledger" id="network" data-state="connecting">
+        <span class="ledger-state"><span class="dot" aria-hidden="true"></span><span id="net-badge">Production network</span></span>
+        <dl>
+          <div><dt>Height</dt><dd data-net="height">—</dd></div>
+          <div><dt>Last block</dt><dd data-net="age">—</dd></div>
+          <div><dt>Block time</dt><dd data-net="spacing">—</dd></div>
+          <div><dt>Hash rate</dt><dd data-net="rate">—</dd></div>
+          <div><dt>Daler issued</dt><dd data-net="issued">—</dd></div>
+        </dl>
+        <a class="ledger-link" id="net-source" href="https://node1.ting-node.com/" title="These figures are read in your browser from a public node. Its explorer shows every block.">node1.ting-node.com</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="protocol" aria-labelledby="protocol-title">
+    <div class="wrap sec-grid">
+      <p class="sec-rail label"><span class="sec-no">01</span><span>The protocol</span></p>
+      <div class="sec-body">
+        <h2 id="protocol-title">Consensus does four things, and <em>nothing else</em></h2>
+        <p class="sec-lead">On most programmable chains, a new signature scheme, opcode, fee rule or token standard is a protocol upgrade: every node changes together, and each change can alter what existing applications do or what they cost. Ting keeps its consensus small enough to state exactly, and then leaves it alone.</p>
+        <ol class="four">
+          <li><span class="label">One</span><strong>Order</strong><p>Transactions are ordered in blocks secured by SHA-256 proof of work.</p></li>
+          <li><span class="label">Two</span><strong>Execute</strong><p>Programs run deterministically in a small, exactly specified WebAssembly profile.</p></li>
+          <li><span class="label">Three</span><strong>Commit</strong><p>Every block commits to its transactions, their receipts and the resulting state.</p></li>
+          <li><span class="label">Four</span><strong>Count</strong><p>Four independent counters bound the compute, state access, data and storage growth of every transaction.</p></li>
+        </ol>
+        <p class="aside-text">Accounts, signatures, coins, fees, replay protection and upgrades are not on that list. They are programs, deployed and used through ordinary transactions. What is left fits in one document:</p>
+        <dl class="counts">
+          <div><dt>kinds of transaction</dt><dd>2</dd></div>
+          <div><dt>instructions</dt><dd>115</dd></div>
+          <div><dt>host functions</dt><dd>12</dd></div>
+          <div><dt>resource counters</dt><dd>4</dd></div>
+          <div class="zero"><dt>native coins, accounts or fees</dt><dd>0</dd></div>
+        </dl>
+        <p class="more"><a href="{{root}}wiki/">Why Ting</a><a href="{{root}}wiki/consensus/">How nodes agree</a><a href="{{root}}wiki/vm/">Programs and the VM</a><a href="{{root}}wiki/resources/">The four resources</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="why" aria-labelledby="why-title">
+    <div class="wrap sec-grid">
+      <p class="sec-rail label"><span class="sec-no">02</span><span>What it gives you</span></p>
+      <div class="sec-body">
+        <h2 id="why-title">Rules that applications can depend on</h2>
+        <div class="gains">
+          <div><h3>Rules that stay put</h3><p>The protocol was frozen at launch. Every instruction keeps its meaning and its resource charge for as long as the chain runs.</p></div>
+          <div><h3>Cryptography you can replace</h3><p>A new signature scheme or hash function is deployed as a program. Applications move to it when they choose, without a protocol change.</p></div>
+          <div><h3>No privileged application</h3><p>There is no native coin, account model or fee asset. The chain does not pick winners among the programs built on it.</p></div>
+          <div><h3>Costs that don’t drift</h3><p>Work is counted in logical units, not prices or nanoseconds. Faster hardware does not change what an operation costs.</p></div>
+          <div><h3>Capacity without upgrades</h3><p>Miners vote block capacity up or down, slowly, above floors fixed at genesis. They cannot vote to change the rules.</p></div>
+          <div><h3>Room for better nodes</h3><p>Implementations may compile, cache or parallelize freely, as long as every result and every counter matches.</p></div>
+        </div>
+        <p class="more"><a href="{{root}}wiki/decisions/">The ten design commitments</a><a href="{{root}}wiki/decisions/freeze/">Why consensus is frozen</a><a href="{{root}}wiki/faq/">Common questions</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec inverse" id="check" aria-labelledby="check-title">
+    <div class="wrap sec-grid">
+      <p class="sec-rail label"><span class="sec-no">03</span><span>Agreement you can check</span></p>
+      <div class="sec-body">
+        <h2 id="check-title">Nothing here asks to be taken <em>on trust</em></h2>
+        <p class="sec-lead">Freezing the rules only helps if independent implementations agree on every byte and every counter. Ting is built so that agreement can be checked, not assumed.</p>
+        <div class="proofs">
+          <a class="proof" href="{{root}}wiki/reference/rules/">
+            <h3>The rules in one document</h3>
+            <p>Every format, instruction, price and failure order, down to SHA-256. With a network’s seed blocks it defines the consensus completely.</p>
+            <span class="arrow">Read the protocol rules</span>
+          </a>
+          <a class="proof" href="{{root}}wiki/reference/conformance/">
+            <h3>A test suite inside the chain</h3>
+            <p>Every chain begins with its seed: thousands of transactions that run every instruction, host function and price step. A node that syncs has replayed the whole suite.</p>
+            <span class="arrow">Conformance and testing</span>
+          </a>
+          <a class="proof" href="https://github.com/ting-organization/goting">
+            <h3>Two implementations</h3>
+            <p>The Go node was written from the rules document alone. It validated the production seed and every later block on its first attempt.</p>
+            <span class="arrow">goting on GitHub</span>
+          </a>
+          <a class="proof" href="{{root}}wiki/vm/metering/">
+            <h3>Counters, not estimates</h3>
+            <p>Every receipt records exactly how much compute, state access, data and growth its transaction used, so nodes agree on costs to the unit.</p>
+            <span class="arrow">Exact metering</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="start" aria-labelledby="start-title">
+    <div class="wrap sec-grid">
+      <p class="sec-rail label"><span class="sec-no">04</span><span>Get started</span></p>
+      <div class="sec-body">
+        <h2 id="start-title">Choose your path</h2>
+        <div class="paths">
+          <a class="path" href="{{root}}wiki/tour/"><strong>Understand it</strong><span>A short tour that follows one transaction from its bytes to a block every node agrees on, then the common questions and the glossary.</span><span class="arrow">Take the tour</span></a>
+          <a class="path" href="#mine"><strong>Mine</strong><span>The miner is a full node with a wallet built in. It searches on the CPU, the GPUs or both, and claims each block’s reward.</span><span class="arrow">Start mining</span></a>
+          <a class="path" href="#ting-id"><strong>Hold and pay</strong><span>Ting ID is a wallet and identity app for Android: spending and savings accounts, payments by QR code, recovery through guardians.</span><span class="arrow">Get Ting ID</span></a>
+          <a class="path" href="{{root}}wiki/start/node/"><strong>Run a node</strong><span>Validate the chain yourself and serve its explorer and REST API, on the production network or on a development chain of your own.</span><span class="arrow">Start a node</span></a>
+          <a class="path" href="{{root}}wiki/applications/"><strong>Build on it</strong><span>What programs can do, how to write one the network accepts, and the reference programs for coins, identities and signatures.</span><span class="arrow">What applications build</span></a>
+          <a class="path" href="{{root}}wiki/reference/rules/"><strong>Implement it</strong><span>The protocol rules in one document, and the seed and vectors that check an implementation byte for byte.</span><span class="arrow">Read the rules</span></a>
+        </div>
+
+        <div class="terminals">
+          <article class="terminal" id="mine">
+            <h3>Mine on the production network</h3>
+            <p>Download the archive for your machine from the <a href="https://github.com/ting-organization/ting-miner/releases">miner’s releases</a>, check it against its <code>SHA256SUMS</code> and unpack it. Then, in the unpacked folder:</p>
+            <div class="code">
+              <div class="code-bar"><span>Ting miner</span><button class="copy-code" type="button" data-copy>Copy</button></div>
+              <pre><code><span class="ln">./ting init</span>
+<span class="ln">./ting wallet create</span>
+<span class="ln">./ting miner payout &lt;the account it shows&gt;</span>
+<span class="ln">./ting miner start --threads 4</span>
+<span class="ln">./ting start</span></code></pre>
+            </div>
+            <p class="fine">Builds for Linux (x86-64 and ARM64), macOS (Apple silicon and Intel) and Windows, where the command is <code>.\ting.exe</code>. Mining is solo, and an account from Ting ID can take the payout as well. <a href="https://github.com/ting-organization/ting-miner/blob/HEAD/MINER.md">MINER.md</a> covers the wallet, the settings and the benchmarks.</p>
+          </article>
+          <article class="terminal" id="dev">
+            <h3>Try it on a development chain</h3>
+            <p>From a checkout of the <a href="https://github.com/ting-organization/ting">ting repository</a>, with Rust installed, a chain of your own to run, explore and build on:</p>
+            <div class="code">
+              <div class="code-bar"><span>Reference node</span><button class="copy-code" type="button" data-copy>Copy</button></div>
+              <pre><code><span class="ln">cargo install --path node --locked</span>
+<span class="ln">ting init --dev --api</span>
+<span class="ln">ting start</span>
+<span class="ln">ting mine --count 3</span>
+<span class="ln">ting status</span></code></pre>
+            </div>
+            <p class="fine">The node serves its own explorer at <code>http://127.0.0.1:18441/</code>, with the wiki at <code>/wiki</code> and the REST API reference at <code>/docs</code>. Plain <code>ting init</code> joins the production network instead. Next: <a href="{{root}}wiki/start/first-program/">deploy a first program</a>.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="apps" aria-labelledby="apps-title">
+    <div class="wrap sec-grid">
+      <p class="sec-rail label"><span class="sec-no">05</span><span>Software</span></p>
+      <div class="sec-body">
+        <h2 id="apps-title">Everything that runs on Ting today</h2>
+        <p class="sec-lead">All of it is open source, under the MIT and Apache 2.0 licences. None of it is part of the protocol: any of it can be replaced by something better without asking anyone.</p>
+
+        <h3 class="catalog-head label">Nodes and mining</h3>
+        <article class="item">
+          <div class="item-id"><span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8 20 7.4v9.2L12 21.2 4 16.6V7.4z"/><path d="M4.3 7.6 12 12l7.7-4.4M12 12v9"/></svg></span><div><h4>Ting</h4><p class="label">Reference node · Rust</p></div></div>
+          <p class="item-desc">The protocol rules, the consensus core and VM, and the <code>ting</code> node: peer protocol, storage, REST API, block explorer and the wiki.</p>
+          <p class="item-links"><a href="https://github.com/ting-organization/ting">Source</a><a href="{{root}}wiki/node/">How it works</a></p>
+        </article>
+        <article class="item">
+          <div class="item-id"><span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8.5 7-5 5 5 5M15.5 7l5 5-5 5"/></svg></span><div><h4>goting</h4><p class="label">Second implementation · Go</p></div></div>
+          <p class="item-desc">The protocol and a node in Go, written from the rules document. It syncs from, serves and relays to reference nodes, and passes the reference’s conformance items.</p>
+          <p class="item-links"><a href="https://github.com/ting-organization/goting">Source</a><a href="https://github.com/ting-organization/goting/blob/HEAD/docs/FINDINGS.md">Findings</a></p>
+        </article>
+        <article class="item">
+          <div class="item-id"><span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/><path d="M9.5 3v3.5M14.5 3v3.5M9.5 17.5V21M14.5 17.5V21M3 9.5h3.5M3 14.5h3.5M17.5 9.5H21M17.5 14.5H21"/></svg></span><div><h4>Ting miner</h4><p class="label">Mining node · CPU and GPU</p></div></div>
+          <p class="item-desc">The Ting node with a mining policy for pay and a wallet for the rewards. It benchmarks the machine and mines with the fastest search it has.</p>
+          <p class="item-links"><a href="https://github.com/ting-organization/ting-miner/releases">Download</a><a href="https://github.com/ting-organization/ting-miner">Source</a></p>
+        </article>
+
+        <h3 class="catalog-head label" id="ting-id">Wallet and identity</h3>
+        <article class="feature">
+          <div class="feature-copy">
+            <div class="item-id"><img class="app-icon" src="{{root}}assets/ting-id.svg" width="52" height="52" alt=""><div><h4>Ting ID</h4><p class="label">A wallet and identity app · Android</p></div></div>
+            <ul>
+              <li><strong>An identity, not only a key.</strong> A Spending account for everyday payments, and a Savings account whose payments wait seven days and can be cancelled meanwhile.</li>
+              <li><strong>Recovery that survives a lost phone.</strong> A twelve-word phrase, and guardians who can restore access or replace a phrase someone else got hold of.</li>
+              <li><strong>Any coin of the standard coin program.</strong> Send, schedule and cancel payments, by QR code or link, with fees set from what recent transactions paid.</li>
+              <li><strong>One signature for sites and programs.</strong> Sign in without a password, and approve an action in a program in the program’s own words. The page holds no key.</li>
+              <li><strong>It checks what it is told.</strong> Every record is checked against the block it comes from, and with two or more nodes each checks the others.</li>
+            </ul>
+            <p class="feature-links"><a class="button" href="https://github.com/ting-organization/ting-id#download">Download for Android</a><a href="https://github.com/ting-organization/ting-id">Source</a><a href="{{root}}wiki/programs/identity/">The identity registry</a></p>
+            <p class="fine">Ting ID is new software and still changing: keep in it only what you can afford to lose. It is one wallet built on the reference programs, not part of the protocol, and the miner has a wallet of its own, so mining needs no phone. The pictures are of a development chain with test identities.</p>
+          </div>
+          <div class="feature-shots">
+            <img src="{{root}}assets/ting-id-wallet.png" width="564" height="1224" loading="lazy" alt="Ting ID’s wallet: a Daler total, the Spending and Savings accounts, and recent activity">
+            <img src="{{root}}assets/ting-id-review.png" width="564" height="1224" loading="lazy" alt="Ting ID reviewing a payment before it is sent, the receiving account shown in full">
+          </div>
+        </article>
+
+        <h3 class="catalog-head label">Applications on the chain</h3>
+        <article class="item">
+          <div class="item-id"><img class="app-icon" src="{{root}}assets/ting-swap.svg" width="42" height="42" alt=""><div><h4>Ting Swap</h4><p class="label">Coins, one listing at a time</p></div></div>
+          <p class="item-desc">A listing says what its maker gives and what they want; its coins wait in the program until someone takes it whole with Ting ID, or the maker withdraws it. No order book, no deposits and no balances.</p>
+          <p class="item-links"><a href="https://ting-organization.github.io/ting-swap/">Open Ting Swap</a><a href="https://github.com/ting-organization/ting-swap">Source</a><a href="https://github.com/ting-organization/ting-swap/blob/HEAD/SPEC.md">Its rules</a></p>
+        </article>
+        <article class="item">
+          <div class="item-id"><img class="app-icon" src="{{root}}assets/ting-canvas.svg" width="42" height="42" alt=""><div><h4>Ting Canvas</h4><p class="label">One shared canvas a week</p></div></div>
+          <p class="item-desc">Anyone paints it, pixel by pixel, and every paint burns coins. When the week ends the canvas locks for good and is auctioned; the winner owns it, to name, give away or sell.</p>
+          <p class="item-links"><a href="https://ting-organization.github.io/ting-canvas/">Open Ting Canvas</a><a href="https://github.com/ting-organization/ting-canvas">Source</a><a href="https://github.com/ting-organization/ting-canvas/blob/HEAD/SPEC.md">Its rules</a></p>
+        </article>
+        <p class="catalog-note">Each is a program on the chain and a static page. The page holds no key and no coins: it reads the chain from a node and hands every action to the wallet as a link, so no server stands between the user and the program.</p>
+
+        <h3 class="catalog-head label">A public node</h3>
+        <article class="item">
+          <div class="item-id"><span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></span><div><h4>Block explorer</h4><p class="label">node1.ting-node.com</p></div></div>
+          <p class="item-desc">Blocks, transactions with their receipts and counters, contracts and their storage, the mempool and the network, as one of the network’s seed nodes sees them.</p>
+          <p class="item-links"><a href="https://node1.ting-node.com/">Open the explorer</a><a href="{{root}}wiki/start/explore/">Explore the chain</a></p>
+        </article>
+        <article class="item">
+          <div class="item-id"><span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4c-2 0-3 1-3 3v2.5c0 1.3-.7 2.5-2 2.5 1.3 0 2 1.2 2 2.5V17c0 2 1 3 3 3M15 4c2 0 3 1 3 3v2.5c0 1.3.7 2.5 2 2.5-1.3 0-2 1.2-2 2.5V17c0 2-1 3-3 3"/></svg></span><div><h4>REST API</h4><p class="label">Read the chain, submit transactions</p></div></div>
+          <p class="item-desc">Every node can serve the same API, with storage answers that carry their proofs. The public node answers browsers from any origin, which is how this page reads its figures.</p>
+          <p class="item-links"><a href="https://node1.ting-node.com/docs">API reference</a><a href="{{root}}wiki/applications/integrations/">Following the chain</a></p>
+        </article>
+
+        <h3 class="catalog-head label">For application developers</h3>
+        <ul class="standards">
+          <li><a href="{{root}}wiki/programs/"><strong>Reference programs</strong><span class="arrow" aria-hidden="true"></span><span>Frozen, deployable modules for coins, identities, signature policies, SHA-256 and batched calls.</span></a></li>
+          <li><a href="{{root}}wiki/applications/writing-programs/"><strong>Writing a program</strong><span class="arrow" aria-hidden="true"></span><span>Producing a module the profile accepts, and keeping it cheap to run.</span></a></li>
+          <li><a href="https://github.com/ting-organization/ting-id/blob/HEAD/TCR-1.md"><strong>TCR-1: Ting Call Requests</strong><span class="arrow" aria-hidden="true"></span><span>How a page asks a user to do something in a program, and how the program knows they agreed to exactly that. A draft.</span></a></li>
+          <li><a href="https://github.com/ting-organization/ting-id/blob/HEAD/TOCS-1.md"><strong>TOCS-1: Ting Off-Chain Signing</strong><span class="arrow" aria-hidden="true"></span><span>How a site asks a user to sign in or sign a statement, and checks the answer against the chain.</span></a></li>
+          <li><a href="https://github.com/ting-organization/ting-id/blob/HEAD/LINKS.md"><strong>Ting links</strong><span class="arrow" aria-hidden="true"></span><span>What one person asks of another, as a QR code or a link: pay me, add this device, approve my recovery.</span></a></li>
+          <li><a href="{{root}}wiki/reference/peer-protocol/"><strong>Peer protocol</strong><span class="arrow" aria-hidden="true"></span><span>How to talk to a reference node, byte for byte: connections, frames, messages and limits.</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="daler" aria-labelledby="daler-title">
+    <div class="wrap sec-grid">
+      <p class="sec-rail label"><span class="sec-no">06</span><span>The first coin</span></p>
+      <div class="sec-body">
+        <h2 id="daler-title">Daler, the first coin on Ting</h2>
+        <div class="two-col">
+          <div class="prose">
+            <p>Ting has no native coin. Daler (DLR) is one deployment of the reference coin program, the same program anyone can deploy with their own name, supply and rewards. The chain does not know it exists and gives it no privilege; other coins can pay miners just as well.</p>
+            <p>Daler began with nothing issued: no premine, no allocations and no account that can mint. Every coin in existence was claimed as a reward by a mined block, and a block that names no payout account issues nothing. Its deployment is on the chain for anyone to read.</p>
+            <p class="more"><a href="{{root}}wiki/programs/coin/">The coin program</a><a href="{{root}}wiki/decisions/no-native-coin/">Why there is no native coin</a><a href="https://node1.ting-node.com/contracts/305378d17f6af84a563d0f8a8455084948aff7330b62b4f2f98a44b82ba113c4">Daler in the explorer</a></p>
+          </div>
+          <div>
+            <div class="issuance">
+              <p class="issuance-figure" data-net="issued">—</p>
+              <span class="label">issued so far<span data-net="issued-share"></span></span>
+              <div class="bar" aria-hidden="true"><span id="issued-bar"></span></div>
+            </div>
+            <dl class="spec">
+              <dt>Symbol</dt><dd>DLR</dd>
+              <dt>ContractId</dt><dd class="mono">305378d17f6af84a563d0f8a8455084948aff7330b62b4f2f98a44b82ba113c4</dd>
+              <dt>Deployed</dt><dd>Block 443, 21 October 2026, 13:47 UTC</dd>
+              <dt>Maximum supply</dt><dd>210,000,000 DLR</dd>
+              <dt>Block reward</dt><dd>100 DLR</dd>
+              <dt>Halving</dt><dd>Every 1,050,000 blocks, about two years</dd>
+              <dt>Premine, allocations</dt><dd>None</dd>
+              <dt>Minting authority</dt><dd>None</dd>
+              <dt>Decimals</dt><dd>8</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="status" aria-labelledby="status-title">
+    <div class="wrap sec-grid">
+      <p class="sec-rail label"><span class="sec-no">07</span><span>Where it stands</span></p>
+      <div class="sec-body">
+        <h2 id="status-title">What to know before you rely on it</h2>
+        <p class="sec-lead">Ting is a young network and a small project. These are its weak points, stated plainly.</p>
+        <ol class="cautions">
+          <li><div><h3>The network is small</h3><p>Little hash power secures it so far, so someone who rents more could reorganize recent blocks. Wait for more confirmations than you would on a large network. More independent miners are what changes this.</p></div></li>
+          <li><div><h3>Frozen means frozen</h3><p>A flaw in the consensus cannot be patched in place. The answer to one that makes the chain unsafe is a new chain with its own genesis, which can carry the old chain’s state over. That is a coordination event, not something the protocol does by itself. <a href="{{root}}wiki/decisions/freeze/">Freeze consensus once</a></p></div></li>
+          <li><div><h3>Two implementations, one maintainer</h3><p>The Go node was written from the rules alone and agrees with the Rust node on every block, but both come from the same maintainer. An implementation written by someone else would be a stronger check, and is welcome.</p></div></li>
+          <li><div><h3>Written with AI assistance</h3><p>Much of the code was written with AI coding assistants under the maintainer’s direction. Expected results come from the written rules, never from the code under test, and the suite is part of the chain as its seed blocks. <a href="https://github.com/ting-organization/ting#ai-usage">AI usage</a></p></div></li>
+          <li><div><h3>Early software</h3><p>The wallet and the miner are new. Desktop binaries are not code-signed: check each download against its <code>SHA256SUMS</code> and build attestation, or build from source, and keep in a wallet only what you can afford to lose.</p></div></li>
+          <li><div><h3>Review is the point</h3><p>The rules, the implementations, the tests and the vectors are public so that they can be checked. If something looks wrong or questionable, <a href="https://github.com/ting-organization/ting/discussions">say so</a>; a vulnerability goes through <a href="https://github.com/ting-organization/ting/blob/master/SECURITY.md">SECURITY.md</a>.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="details" aria-labelledby="details-title">
+    <div class="wrap sec-grid">
+      <p class="sec-rail label"><span class="sec-no">08</span><span>At a glance</span></p>
+      <div class="sec-body">
+        <h2 id="details-title">Technical details</h2>
+        <dl class="spec wide">
+          <dt><a href="{{root}}wiki/consensus/proof-of-work/">Consensus</a></dt><dd>Proof of work; nodes follow the heaviest valid chain</dd>
+          <dt>Proof of work</dt><dd>A single SHA-256 over Ting’s tagged block header, with a 16-byte nonce. It is not Bitcoin’s block format or double SHA-256, so Bitcoin ASICs cannot mine it and there is no merge-mining</dd>
+          <dt><a href="{{root}}wiki/consensus/difficulty/">Block time, difficulty</a></dt><dd>60-second target; difficulty moves every block on an ASERT schedule anchored at genesis, with a 12-hour half-life</dd>
+          <dt><a href="{{root}}wiki/vm/profile/">Programs</a></dt><dd>A deterministic integer WebAssembly profile: 115 instructions and twelve host functions</dd>
+          <dt><a href="{{root}}wiki/data/blocks/">Transactions</a></dt><dd>Two kinds: deploy and invoke</dd>
+          <dt><a href="{{root}}wiki/resources/">Resource accounting</a></dt><dd>Four counters: compute, state access, data and storage growth</dd>
+          <dt><a href="{{root}}wiki/consensus/capacity-voting/">Block capacity</a></dt><dd>Moved by miners’ work-weighted vote, slowly, above floors fixed at genesis</dd>
+          <dt>Coins, accounts, fees</dt><dd>None in the protocol: they are programs</dd>
+          <dt>Implementations</dt><dd>Rust (reference) and Go</dd>
+          <dt><a href="{{root}}wiki/consensus/genesis/">Production network</a></dt><dd>Began 21 October 2026, 00:00 UTC</dd>
+          <dt>ChainId</dt><dd class="mono">15d6549cfacd816f835c632b4c67308d1c63e642f4cbf4049368430670705107</dd>
+          <dt>Licence</dt><dd>MIT or Apache 2.0, at your option</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="community" aria-labelledby="community-title">
+    <div class="wrap sec-grid">
+      <p class="sec-rail label"><span class="sec-no">09</span><span>Community</span></p>
+      <div class="sec-body">
+        <h2 id="community-title">Ask, review, take part</h2>
+        <div class="places">
+          <a href="https://discord.gg/wJJCncGa"><strong>Discord</strong><span>Questions, and help with mining and nodes.</span></a>
+          <a href="https://github.com/ting-organization/ting/discussions"><strong>Discussions</strong><span>The design, the rules and anything that needs a longer answer, on GitHub.</span></a>
+          <a href="https://bitcointalk.org/index.php?topic=5599158.0"><strong>Bitcointalk</strong><span>The announcement thread.</span></a>
+          <a href="https://www.youtube.com/@Ting-i4j1m"><strong>YouTube</strong><span>The introduction and the explainer videos.</span></a>
+          <a href="https://github.com/ting-organization"><strong>GitHub</strong><span>Every repository of the project.</span></a>
+          <a href="https://github.com/ting-organization/ting/blob/master/SECURITY.md"><strong>Security</strong><span>How to report a vulnerability privately.</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="home-footer">
+  <div class="wrap">
+    <p class="statement">The rules and the seed blocks define the consensus. <em>Nothing else does.</em></p>
+    <div class="footer-cols">
+      <nav aria-label="Learn">
+        <h2>Learn</h2>
+        <a href="{{root}}wiki/">Why Ting</a>
+        <a href="{{root}}wiki/tour/">A tour of Ting</a>
+        <a href="{{root}}wiki/faq/">Common questions</a>
+        <a href="{{root}}wiki/glossary/">Glossary</a>
+        <a href="{{root}}wiki/decisions/">Design commitments</a>
+        <a href="{{root}}wiki/reference/rules/">Protocol rules</a>
+      </nav>
+      <nav aria-label="Use">
+        <h2>Use</h2>
+        <a href="#mine">Start mining</a>
+        <a href="#ting-id">Ting ID</a>
+        <a href="https://node1.ting-node.com/">Block explorer</a>
+        <a href="https://ting-organization.github.io/ting-swap/">Ting Swap</a>
+        <a href="https://ting-organization.github.io/ting-canvas/">Ting Canvas</a>
+      </nav>
+      <nav aria-label="Build">
+        <h2>Build</h2>
+        <a href="{{root}}wiki/start/node/">Start a node</a>
+        <a href="{{root}}wiki/start/first-program/">Deploy a first program</a>
+        <a href="{{root}}wiki/applications/writing-programs/">Writing a program</a>
+        <a href="{{root}}wiki/programs/">Reference programs</a>
+        <a href="https://node1.ting-node.com/docs">REST API</a>
+        <a href="{{root}}wiki/reference/conformance/">Conformance and testing</a>
+      </nav>
+      <nav aria-label="Project">
+        <h2>Project</h2>
+        <a href="https://github.com/ting-organization">GitHub</a>
+        <a href="https://github.com/ting-organization/ting/discussions">Discussions</a>
+        <a href="https://discord.gg/wJJCncGa">Discord</a>
+        <a href="https://bitcointalk.org/index.php?topic=5599158.0">Bitcointalk</a>
+        <a href="https://www.youtube.com/@Ting-i4j1m">YouTube</a>
+        <a href="https://github.com/ting-organization/ting/blob/master/SECURITY.md">Security</a>
+      </nav>
+    </div>
+    <div class="footer-base">
+      <a class="brand" href="{{root}}"><img src="{{root}}assets/logo.svg" alt="" width="28" height="28"><span>Ting</span></a>
+      <p>This site explains Ting; where it and the <a href="{{root}}wiki/reference/rules/">protocol rules</a> differ, the rules decide. Open source under the MIT and Apache 2.0 licences.</p>
+    </div>
+  </div>
+</footer>
