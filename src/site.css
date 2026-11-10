@@ -177,11 +177,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .four strong { display: block; margin: 26px 0 10px; font: 440 34px/1.05 var(--serif); letter-spacing: -.02em; }
 .four p { color: var(--text-2); font-size: 15.5px; line-height: 1.6; }
 .aside-text { max-width: 60ch; margin-top: 64px !important; color: var(--text-2); font-size: 19px; line-height: 1.6; }
-.counts { display: flex; flex-wrap: wrap; gap: 28px 64px; margin: 40px 0 0; }
-.counts div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 10px; }
-.counts dd { margin: 0; font: 380 clamp(64px, 7.4vw, 100px)/.86 var(--serif); letter-spacing: -.04em; font-variant-numeric: lining-nums; }
-.counts dt { max-width: 15ch; color: var(--muted); font: 500 11.5px/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
-.counts .zero dd { color: var(--primary); font-style: italic; }
+.counts { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0 32px; margin: 36px 0 0; }
+.counts div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 6px; padding-top: 16px; border-top: 1px solid var(--border); }
+.counts dd { margin: 0; font: 400 36px/1 var(--serif); letter-spacing: -.02em; font-variant-numeric: lining-nums; }
+.counts dt { max-width: 18ch; color: var(--muted); font-size: 14px; line-height: 1.45; }
+.counts dt::first-letter { text-transform: uppercase; }
 
 .gains { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px 48px; }
 .gains > div, .places a { padding-top: 20px; border-top: 1px solid var(--border); }
@@ -472,7 +472,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
   .four, .gains, .places { grid-template-columns: minmax(0, 1fr); }
   .four { gap: 32px; }
   .four strong { margin-top: 14px; }
-  .counts { gap: 28px 40px; }
+  .counts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 24px; }
   .path { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .path .arrow { grid-column: 1; }
   .cta .button, .cta .btn { flex: 1 1 auto; justify-content: center; }
