@@ -26,8 +26,8 @@ const GITHUB = 'https://github.com/ting-organization/ting';
 const NODE = 'https://node1.ting-node.com';
 // The typefaces site.css names, as files of their @fontsource-variable packages.
 const FONTS = [
-  'fraunces/files/fraunces-latin-opsz-normal.woff2', 'fraunces/files/fraunces-latin-opsz-italic.woff2',
-  'schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2', 'schibsted-grotesk/files/schibsted-grotesk-latin-wght-italic.woff2',
+  'newsreader/files/newsreader-latin-opsz-normal.woff2', 'newsreader/files/newsreader-latin-opsz-italic.woff2',
+  'inter/files/inter-latin-wght-normal.woff2', 'inter/files/inter-latin-wght-italic.woff2',
   'jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2',
 ];
 const REF = process.env.TING_REF || 'master';

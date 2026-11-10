@@ -1,7 +1,7 @@
 'use strict';
-// What every page has: the theme switch and the production network's height
-// in the header, read from a public node. The home page also fills the
-// line of network figures under its opening, and Daler's issuance. Everything here is optional: without
+// What every page has: the theme switch and the copy buttons. The home page
+// also fills the line of network figures under its opening, and Daler's
+// issuance, read from a public node. Everything here is optional: without
 // it, or without a node to reach, the pages read the same and link to the
 // explorer instead.
 (() => {
@@ -24,6 +24,10 @@
     });
   }
 
+  // Only the home page shows figures from the network.
+  const panel = byId('network'), badge = byId('net-badge');
+  if (!panel) return;
+
   // Public nodes of the production network, tried in this order.
   const NODES = ['https://node1.ting-node.com', 'https://node2.ting-node.com'];
   const DALER = '305378d17f6af84a563d0f8a8455084948aff7330b62b4f2f98a44b82ba113c4';
@@ -31,7 +35,6 @@
   const ISSUANCE = '0000000000000000000000000000000000000000000000000000000000000001';
   const DECIMALS = 8n, MAX_SUPPLY = 210000000n, WINDOW = 60, EVERY_MS = 20000;
 
-  const live = byId('live'), liveText = byId('live-text'), panel = byId('network'), badge = byId('net-badge');
   const targets = name => document.querySelectorAll('[data-net="' + name + '"]');
   const show = (name, value) => targets(name).forEach(element => { element.textContent = value; });
   const count = value => BigInt(value).toLocaleString('en-US');
@@ -61,14 +64,6 @@
     const status = await get('/v1/status');
     if (status.network !== 'production') throw Error('Not the production network');
     const height = BigInt(status.height);
-    live.hidden = false;
-    live.href = NODES[node] + '/';
-    live.dataset.state = status.replaying ? 'replaying' : 'online';
-    const label = document.createElement('span');
-    label.className = 'live-label'; label.textContent = 'height ';
-    liveText.replaceChildren(label, count(height));
-    if (!panel) return;
-
     panel.dataset.state = 'online';
     badge.textContent = status.replaying ? 'Replaying' : 'Live';
     show('height', count(height));
@@ -103,8 +98,7 @@
     for (let attempt = 0; attempt < NODES.length; attempt++) {
       try { await read(); return; } catch { node = (node + 1) % NODES.length; }
     }
-    live.hidden = true;
-    if (panel) { panel.dataset.state = 'offline'; badge.textContent = 'No answer from the public nodes'; }
+    panel.dataset.state = 'offline'; badge.textContent = 'No answer from the public nodes';
   }
   poll();
   setInterval(poll, EVERY_MS);

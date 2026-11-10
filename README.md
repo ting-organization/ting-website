@@ -55,7 +55,7 @@ section its page does not have.
 | `src/site.css` | The whole look, for the home page and the wiki, in light and dark |
 | `src/site.js` | The theme switch, the copy buttons and the figures read from a node |
 | `src/404.html` | The page for an address that has none |
-| `src/assets/` | The applications' icons and Ting ID's screenshots, copied from their repositories |
+| `src/assets/` | The applications' icons and Ting ID's screenshots, copied from their repositories, and Ting's logo on black for the header and the favicon |
 | `build.mjs` | The build: the wiki's pages as `node/src/wiki.rs` renders them, then the link check |
 | `serve.mjs` | A small server for `dist/` |
 | `.github/workflows/pages.yml` | Builds on every push and every night, and publishes to GitHub Pages once it is on |
@@ -99,7 +99,7 @@ repository reaches it; *Run workflow* does the same at once.
 
 Licensed under either of [Apache License, Version 2.0](LICENSE-APACHE) or
 [MIT license](LICENSE-MIT), at your option. The typefaces,
-[Fraunces](https://github.com/undercasetype/Fraunces),
-[Schibsted Grotesk](https://github.com/schibsted/schibsted-grotesk) and
+[Newsreader](https://github.com/productiontype/Newsreader),
+[Inter](https://github.com/rsms/inter) and
 [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono), are under the SIL
 Open Font License and are served from the site itself.

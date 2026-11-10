@@ -5,10 +5,10 @@
    header's switch picks one. The role names are the ones the wiki's
    diagrams draw with (--text, --card, --primary and so on). */
 
-@font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 100 900; font-display: swap; src: url(fonts/fraunces-latin-opsz-normal.woff2) format('woff2'); }
-@font-face { font-family: 'Fraunces'; font-style: italic; font-weight: 100 900; font-display: swap; src: url(fonts/fraunces-latin-opsz-italic.woff2) format('woff2'); }
-@font-face { font-family: 'Schibsted Grotesk'; font-style: normal; font-weight: 400 900; font-display: swap; src: url(fonts/schibsted-grotesk-latin-wght-normal.woff2) format('woff2'); }
-@font-face { font-family: 'Schibsted Grotesk'; font-style: italic; font-weight: 400 900; font-display: swap; src: url(fonts/schibsted-grotesk-latin-wght-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Newsreader'; font-style: normal; font-weight: 200 800; font-display: swap; src: url(fonts/newsreader-latin-opsz-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Newsreader'; font-style: italic; font-weight: 200 800; font-display: swap; src: url(fonts/newsreader-latin-opsz-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap; src: url(fonts/inter-latin-wght-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: italic; font-weight: 100 900; font-display: swap; src: url(fonts/inter-latin-wght-italic.woff2) format('woff2'); }
 @font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 100 800; font-display: swap; src: url(fonts/jetbrains-mono-latin-wght-normal.woff2) format('woff2'); }
 
 :root {
@@ -38,8 +38,8 @@
   --on-ink-2: #b4b0bd;
   --ink-rule: rgba(242, 239, 231, .17);
   --ink-accent: #b3aeff;
-  --font: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --serif: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --serif: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
@@ -87,18 +87,14 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); font: 600 23px/1 var(--serif); letter-spacing: -.01em; }
 .brand:hover { text-decoration: none; }
 .brand img { width: 28px; height: 28px; border-radius: 8px; }
+/* Newsreader's capitals sit high in their line; this centres them on the logo. */
+.brand span { translate: 0 .13em; }
 .top-nav { display: flex; gap: 24px; margin-right: auto; }
 .top-nav a { padding: 4px 0; color: var(--text-2); font-size: 14.5px; white-space: nowrap; }
 .top-nav a:hover { color: var(--text); text-decoration: none; }
 .top-nav a[aria-current] { color: var(--text); box-shadow: 0 2px 0 var(--text); }
 .top-nav a.external::after { content: "\2197"; margin-left: 3px; color: var(--faint); font-size: 11px; }
-.live { display: inline-flex; align-items: center; gap: 8px; color: var(--text-2); font: 12.5px var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.live[hidden] { display: none; }
-.live:hover { color: var(--text); text-decoration: none; }
-.live-label { color: var(--faint); }
-.live-dot, .dot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--faint); }
-.live[data-state=online] .live-dot { background: var(--dot-good); box-shadow: 0 0 0 3px color-mix(in srgb, var(--dot-good) 22%, transparent); }
-.live[data-state=replaying] .live-dot { background: var(--warning); }
+.dot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--faint); }
 .theme-toggle { flex: none; display: grid; place-items: center; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--text-2); }
 .theme-toggle:hover { background: var(--card-alt); color: var(--text); }
 .theme-toggle svg { width: 17px; height: 17px; }
@@ -136,7 +132,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 /* ---- Home: hero --------------------------------------------------------------- */
 
 .hero-sec { padding: 72px 0 0; }
-.home h1 { max-width: 11em; margin-top: 22px; font: 400 clamp(52px, 8.6vw, 118px)/.95 var(--serif); letter-spacing: -.035em; }
+.home h1 { max-width: 11em; margin-top: 22px; font: 400 clamp(52px, 8.6vw, 118px)/.95 var(--serif); letter-spacing: -.03em; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 72px; align-items: end; margin-top: 52px; }
 .lead { max-width: 54ch; color: var(--text-2); font-size: 20px; line-height: 1.55; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
@@ -427,7 +423,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
   :root { --gutter: 20px; --header-h: 104px; }
   .header-inner { flex-wrap: wrap; gap: 0 14px; height: auto; padding: 12px 20px 0; }
   .brand { margin-right: auto; }
-  .site-header .live { order: 3; }
   .theme-toggle { order: 4; }
   .top-nav { order: 5; flex-basis: 100%; gap: 22px; margin: 6px 0 0; padding: 6px 0 12px; overflow-x: auto; scrollbar-width: none; }
   .top-nav::-webkit-scrollbar { display: none; }
