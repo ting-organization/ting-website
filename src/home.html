@@ -44,23 +44,35 @@
       <p class="sec-rail label"><span class="sec-no">01</span><span>Use it today</span></p>
       <div class="sec-body">
         <h2 id="ting-id-title">Hold, pay and sign in with <em>Ting ID</em></h2>
-        <p class="sec-lead">The wallet and identity app for Ting, on Android. Accounts, recovery and sign-in are not features of the chain: they are programs deployed on it, and Ting ID is one app that uses them.</p>
+        <p class="sec-lead">The wallet and identity app for Ting, on Android and in the browser. Accounts, recovery and sign-in are not features of the chain: they are programs deployed on it, and Ting ID is one app that uses them.</p>
         <article class="feature">
+          <figure class="feature-picture">
+            <img src="{{root}}assets/ting-id-platforms.webp" width="1721" height="1077" alt="Ting ID in a browser at wallet.ting-project.com and on a phone, each showing the same wallet: a Daler total, the Spending and Savings accounts, Send, Receive and Scan, and the activity">
+          </figure>
           <div class="feature-copy">
-            <div class="item-id"><img class="app-icon" src="{{root}}assets/ting-id.svg" width="52" height="52" alt=""><div><h3 class="feature-name">Ting ID</h3><p class="label">A wallet and identity app · Android</p></div></div>
-            <ul>
-              <li><strong>An identity, not only a key.</strong> A Spending account for everyday payments, and a Savings account whose payments wait seven days and can be cancelled meanwhile.</li>
-              <li><strong>Recovery that survives a lost phone.</strong> A twelve-word phrase, and guardians who can restore access or replace a phrase someone else got hold of.</li>
-              <li><strong>Any coin of the standard coin program.</strong> Send, schedule and cancel payments, by QR code or link, with fees set from what recent transactions paid.</li>
-              <li><strong>One signature for sites and programs.</strong> Sign in without a password, and approve an action in a program in the program’s own words. The page holds no key.</li>
-              <li><strong>It checks what it is told.</strong> Every record is checked against the block it comes from, and with two or more nodes each checks the others.</li>
-            </ul>
-            <p class="feature-links"><a class="button" href="https://github.com/ting-organization/ting-id#download">Download for Android</a><a href="https://github.com/ting-organization/ting-id">Source</a><a href="{{root}}wiki/programs/identity/">The identity registry</a></p>
-            <p class="fine">Ting ID is new software and still changing: keep in it only what you can afford to lose. It is one wallet built on the reference programs, not part of the protocol, and the miner has a wallet of its own, so mining needs no phone. The pictures are of a development chain with test identities.</p>
-          </div>
-          <div class="feature-shots">
-            <img src="{{root}}assets/ting-id-wallet.png" width="564" height="1224" alt="Ting ID’s wallet: a Daler total, the Spending and Savings accounts, and recent activity">
-            <img src="{{root}}assets/ting-id-review.png" width="564" height="1224" alt="Ting ID reviewing a payment before it is sent, the receiving account shown in full">
+            <div class="feature-main">
+              <div class="item-id"><img class="app-icon" src="{{root}}assets/ting-id.svg" width="52" height="52" alt=""><div><h3 class="feature-name">Ting ID</h3><p class="label">One app · Android and web</p></div></div>
+              <ul>
+                <li><strong>An identity, not only a key.</strong> A Spending account for everyday payments, and a Savings account whose payments wait and can be cancelled meanwhile.</li>
+                <li><strong>Recovery that survives a lost device.</strong> A twelve-word phrase, and guardians who can restore access or replace a phrase someone else got hold of.</li>
+                <li><strong>Any coin of the standard coin program.</strong> Send, schedule and cancel payments, by QR code or link, with fees set from what recent transactions paid.</li>
+                <li><strong>One identity on every device.</strong> The phone app and the web app read each other’s links, so one identity can have both a phone and a passkey among its devices.</li>
+                <li><strong>It checks what it is told.</strong> Every record is checked against the block it comes from, and with two or more nodes each checks the others.</li>
+              </ul>
+            </div>
+            <div class="platforms" aria-label="Get Ting ID">
+              <div class="platform">
+                <p class="label">Android</p>
+                <p>A native app for Android 11 or newer. Its keys are made on the phone and sealed in its secure hardware.</p>
+                <p class="platform-links"><a class="button" href="https://github.com/ting-organization/ting-id/releases/latest/download/Ting-ID.apk">Download for Android</a><a href="https://github.com/ting-organization/ting-id#download">How to install</a><a href="https://github.com/ting-organization/ting-id">Source</a></p>
+              </div>
+              <div class="platform">
+                <p class="label">Web</p>
+                <p>In any recent browser on iPhone, Mac, Windows, Linux or Android, signed with a passkey: Face ID, Touch ID, Windows Hello or a security key. It installs as an app from the browser.</p>
+                <p class="platform-links"><a class="button" href="https://wallet.ting-project.com/">Open the web app</a><a href="https://github.com/ting-organization/ting-id-web">Source</a></p>
+              </div>
+            </div>
+            <p class="fine">Ting ID is new software and still changing: keep in it only what you can afford to lose. Signing in to sites and the coin tools are in the Android app for now. It is one wallet built on the <a href="{{root}}wiki/programs/identity/">reference programs</a>, not part of the protocol, and the miner has a wallet of its own, so mining needs neither.</p>
           </div>
         </article>
       </div>
@@ -148,7 +160,7 @@
       <div class="sec-body">
         <h2 id="start-title">Choose your path</h2>
         <div class="paths">
-          <a class="path" href="#ting-id"><strong>Hold and pay</strong><span>Ting ID is a wallet and identity app for Android: spending and savings accounts, payments by QR code, recovery through guardians.</span><span class="arrow">Get Ting ID</span></a>
+          <a class="path" href="#ting-id"><strong>Hold and pay</strong><span>Ting ID is a wallet and identity app, on Android and on the web: spending and savings accounts, payments by QR code, recovery through guardians.</span><span class="arrow">Get Ting ID</span></a>
           <a class="path" href="{{root}}wiki/tour/"><strong>Understand it</strong><span>A short tour that follows one transaction from its bytes to a block every node agrees on, then the common questions and the glossary.</span><span class="arrow">Take the tour</span></a>
           <a class="path" href="#mine"><strong>Mine</strong><span>The miner is a full node with a wallet built in. It searches on the CPU, the GPUs or both, and claims each block’s reward.</span><span class="arrow">Start mining</span></a>
           <a class="path" href="{{root}}wiki/start/node/"><strong>Run a node</strong><span>Validate the chain yourself and serve its explorer and REST API, on the production network or on a development chain of your own.</span><span class="arrow">Start a node</span></a>
@@ -197,9 +209,9 @@
 
         <h3 class="catalog-head label">Wallet and identity</h3>
         <article class="item">
-          <div class="item-id"><img class="app-icon" src="{{root}}assets/ting-id.svg" width="42" height="42" alt=""><div><h4>Ting ID</h4><p class="label">Wallet and identity · Android</p></div></div>
-          <p class="item-desc">Spending and Savings accounts, recovery through guardians, payments by QR code or link, and sign-in without a password, for any coin of the standard coin program.</p>
-          <p class="item-links"><a href="https://github.com/ting-organization/ting-id#download">Download for Android</a><a href="https://github.com/ting-organization/ting-id">Source</a><a href="#ting-id">What it does</a></p>
+          <div class="item-id"><img class="app-icon" src="{{root}}assets/ting-id.svg" width="42" height="42" alt=""><div><h4>Ting ID</h4><p class="label">Wallet and identity · Android and web</p></div></div>
+          <p class="item-desc">Spending and Savings accounts, recovery through guardians, payments by QR code or link, and sign-in without a password, for any coin of the standard coin program. The same app as a native Android app and as a web app signed with passkeys.</p>
+          <p class="item-links"><a href="https://github.com/ting-organization/ting-id/releases/latest/download/Ting-ID.apk">Download for Android</a><a href="https://wallet.ting-project.com/">Open the web app</a><a href="https://github.com/ting-organization/ting-id">Android source</a><a href="https://github.com/ting-organization/ting-id-web">Web source</a></p>
         </article>
 
         <h3 class="catalog-head label">Nodes and mining</h3>
@@ -248,8 +260,8 @@
         <ul class="standards">
           <li><a href="{{root}}wiki/programs/"><strong>Reference programs</strong><span class="arrow" aria-hidden="true"></span><span>Frozen, deployable modules for coins, identities, signature policies, SHA-256 and batched calls.</span></a></li>
           <li><a href="{{root}}wiki/applications/writing-programs/"><strong>Writing a program</strong><span class="arrow" aria-hidden="true"></span><span>Producing a module the profile accepts, and keeping it cheap to run.</span></a></li>
-          <li><a href="https://github.com/ting-organization/ting-id/blob/HEAD/TCR-1.md"><strong>TCR-1: Ting Call Requests</strong><span class="arrow" aria-hidden="true"></span><span>How a page asks a user to do something in a program, and how the program knows they agreed to exactly that. A draft.</span></a></li>
-          <li><a href="https://github.com/ting-organization/ting-id/blob/HEAD/TOCS-1.md"><strong>TOCS-1: Ting Off-Chain Signing</strong><span class="arrow" aria-hidden="true"></span><span>How a site asks a user to sign in or sign a statement, and checks the answer against the chain.</span></a></li>
+          <li><a href="{{root}}wiki/standards/tcr-1/"><strong>TCR-1: Ting Call Requests</strong><span class="arrow" aria-hidden="true"></span><span>How a page asks a user to do something in a program, and how the program knows they agreed to exactly that.</span></a></li>
+          <li><a href="{{root}}wiki/standards/tocs-1/"><strong>TOCS-1: Ting Off-Chain Signing</strong><span class="arrow" aria-hidden="true"></span><span>How a site asks a user to sign in or sign a statement, and checks the answer against the chain.</span></a></li>
           <li><a href="https://github.com/ting-organization/ting-id/blob/HEAD/LINKS.md"><strong>Ting links</strong><span class="arrow" aria-hidden="true"></span><span>What one person asks of another, as a QR code or a link: pay me, add this device, approve my recovery.</span></a></li>
           <li><a href="{{root}}wiki/reference/peer-protocol/"><strong>Peer protocol</strong><span class="arrow" aria-hidden="true"></span><span>How to talk to a reference node, byte for byte: connections, frames, messages and limits.</span></a></li>
         </ul>
@@ -367,6 +379,7 @@
         <h2>Use</h2>
         <a href="#mine">Start mining</a>
         <a href="#ting-id">Ting ID</a>
+        <a href="https://wallet.ting-project.com/">Ting ID on the web</a>
         <a href="https://node1.ting-node.com/">Block explorer</a>
         <a href="https://ting-organization.github.io/ting-swap/">Ting Swap</a>
         <a href="https://ting-organization.github.io/ting-canvas/">Ting Canvas</a>
