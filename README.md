@@ -56,7 +56,7 @@ section its page does not have.
 | `src/site.css` | The whole look, for the home page and the wiki, in light and dark |
 | `src/site.js` | The theme switch, the copy buttons and the figures read from a node |
 | `src/404.html` | The page for an address that has none |
-| `src/assets/` | The applications' icons, copied from their repositories, Ting ID's picture on Android and the web, and Ting's logo on black for the header and the favicon |
+| `src/assets/` | The applications' icons, copied from their repositories, Ting ID's picture on Android and the web, Ting's logo on black for the header, and the favicons made from it (`favicon.ico` and `apple-touch-icon.png` are also copied to the site's root) |
 | `build.mjs` | The build: the wiki's pages as `node/src/wiki.rs` renders them, then the link check |
 | `serve.mjs` | A small server for `dist/` |
 | `.github/workflows/pages.yml` | Builds on every push and every night, and publishes to GitHub Pages once it is on |

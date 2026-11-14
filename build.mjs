@@ -293,6 +293,8 @@ for (const file of FILES) {
   fs.copyFileSync(ting(file), path.join(OUT, 'wiki', file));
 }
 write('404.html', read(path.join(SRC, '404.html')));
+// Browsers, search engines and iPhones also look for these two at the site's root.
+for (const name of ['favicon.ico', 'apple-touch-icon.png']) fs.copyFileSync(path.join(SRC, 'assets', name), path.join(OUT, name));
 write('.nojekyll', '');
 if (SITE_URL) {
   const urls = ['', ...PAGES.map(sitePath)].map(url => `  <url><loc>${SITE_URL}${url}</loc></url>`).join('\n');
